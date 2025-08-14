@@ -1,0 +1,42 @@
+1.
+SELECT DISTINCT
+    CASE WHEN col1 < col2 THEN col1 ELSE col2 END AS col1,
+    CASE WHEN col1 < col2 THEN col2 ELSE col1 END AS col2
+FROM InputTbl;
+
+SELECT
+    CASE WHEN col1 < col2 THEN col1 ELSE col2 END AS col1,
+    CASE WHEN col1 < col2 THEN col2 ELSE col1 END AS col2
+FROM InputTbl
+GROUP BY
+    CASE WHEN col1 < col2 THEN col1 ELSE col2 END,
+    CASE WHEN col1 < col2 THEN col2 ELSE col1 END;
+
+	2.
+	SELECT *
+FROM TestMultipleZero
+WHERE NOT (A = 0 AND B = 0 AND C = 0 AND D = 0);
+
+3.
+SELECT *
+FROM section1
+WHERE id % 2 = 1;
+
+4.
+SELECT *
+FROM section1
+ORDER BY id
+LIMIT 1;
+5.
+SELECT *
+FROM section1
+ORDER BY id DESC
+LIMIT 1;
+6.
+SELECT *
+FROM section1
+WHERE LOWER(name) LIKE 'b%';
+7.
+SELECT *
+FROM YourTable
+WHERE code LIKE '%[_]%';
